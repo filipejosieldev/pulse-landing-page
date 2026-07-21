@@ -21,7 +21,6 @@
       <nav id="nav">
         <a href="#features">Recursos</a>
         <a href="#about">Sobre</a>
-        <a href="#cep-lookup">Endereço</a>
         <a href="#contact">Contato</a>
       </nav>
       <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Abrir menu">
@@ -72,7 +71,7 @@
   </section>
 
   <!-- ========== MODAL CTA ========== -->
-  <div id="cta-modal" class="modal-overlay" hidden>
+  <div id="cta-modal" class="modal-overlay">
     <div class="modal">
       <button id="modal-close" class="modal-close" aria-label="Fechar">&times;</button>
       <div class="modal-icon">🎉</div>
@@ -164,56 +163,7 @@
     </div>
   </section>
 
-  <!-- ========== CEP LOOKUP (ViaCEP API) ========== -->
-  <section id="cep-lookup">
-    <div class="section-container">
-      <p class="section-badge">Consulta de Endereço</p>
-      <h2 class="section-title">Verifique a <span class="gradient-text">entrega na sua região.</span></h2>
-      <p class="section-subtitle">Digite seu CEP para consultar disponibilidade de entrega via API ViaCEP.</p>
 
-      <div class="cep-card">
-        <div class="cep-input-group">
-          <label for="cep-input">CEP</label>
-          <div class="cep-input-row">
-            <input
-              type="text"
-              id="cep-input"
-              placeholder="Ex: 01001-000"
-              maxlength="9"
-              autocomplete="postal-code"
-            >
-            <button id="cep-btn" class="btn btn-primary">Consultar</button>
-          </div>
-          <span id="cep-error" class="field-error" hidden></span>
-        </div>
-
-        <div id="cep-result" class="cep-result" hidden>
-          <h3>📍 Endereço encontrado</h3>
-          <div class="cep-result-grid">
-            <div class="cep-field">
-              <span class="cep-label">Logradouro</span>
-              <span id="res-logradouro" class="cep-value">—</span>
-            </div>
-            <div class="cep-field">
-              <span class="cep-label">Bairro</span>
-              <span id="res-bairro" class="cep-value">—</span>
-            </div>
-            <div class="cep-field">
-              <span class="cep-label">Cidade</span>
-              <span id="res-cidade" class="cep-value">—</span>
-            </div>
-            <div class="cep-field">
-              <span class="cep-label">Estado</span>
-              <span id="res-estado" class="cep-value">—</span>
-            </div>
-          </div>
-          <div id="cep-delivery" class="cep-delivery">
-            ✅ <strong>Ótima notícia!</strong> Entregamos na sua região em até 3 dias úteis.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ========== CONTACT FORM ========== -->
   <section id="contact">
@@ -232,6 +182,14 @@
           <label for="contact-email">E-mail</label>
           <input type="email" id="contact-email" name="email" placeholder="seuemail@exemplo.com" required>
           <span class="field-error" id="email-error" hidden>Por favor, informe um e-mail válido.</span>
+        </div>
+        <div class="form-group">
+          <label for="contact-cep">CEP</label>
+          <input type="text" id="contact-cep" name="cep" placeholder="Ex: 01001-000" maxlength="9" autocomplete="postal-code">
+          <span class="field-error" id="cep-error" hidden></span>
+          <div id="cep-result" class="cep-inline-result" hidden>
+            <span id="res-cidade">—</span> — <span id="res-estado">—</span>
+          </div>
         </div>
         <div class="form-group form-group-full">
           <label for="contact-message">Mensagem</label>
@@ -262,7 +220,6 @@
         <h4>Navegação</h4>
         <a href="#features">Recursos</a>
         <a href="#about">Sobre</a>
-        <a href="#cep-lookup">Endereço</a>
         <a href="#contact">Contato</a>
       </div>
       <div class="footer-links">

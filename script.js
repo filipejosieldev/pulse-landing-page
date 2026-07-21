@@ -35,15 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalCtaLink = document.getElementById('modal-cta-link');
 
   function openModal() {
-    modal.hidden = false;
-    // Force reflow before adding class for transition
-    modal.offsetHeight;
     modal.classList.add('visible');
   }
 
   function closeModal() {
     modal.classList.remove('visible');
-    setTimeout(() => { modal.hidden = true; }, 350);
   }
 
   ctaBtn.addEventListener('click', openModal);
@@ -58,12 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !modal.hidden) closeModal();
+    if (e.key === 'Escape' && modal.classList.contains('visible')) closeModal();
   });
 
-  /* ---------- ViaCEP API ---------- */
-  const cepInput = document.getElementById('cep-input');
-  const cepBtn = document.getElementById('cep-btn');
+  /* ---------- ViaCEP API (inside contact form) ---------- */
+  const cepInput = document.getElementById('contact-cep');
   const cepError = document.getElementById('cep-error');
   const cepResult = document.getElementById('cep-result');
 
@@ -74,20 +69,19 @@ document.addEventListener('DOMContentLoaded', () => {
       value = value.slice(0, 5) + '-' + value.slice(5, 8);
     }
     cepInput.value = value;
+
+    // Auto-fetch when 8 digits typed
+    const raw = value.replace(/\D/g, '');
+    if (raw.length === 8) {
+      fetchCep(raw);
+    } else {
+      cepResult.hidden = true;
+      cepError.hidden = true;
+    }
   });
 
-  async function fetchCep() {
-    const raw = cepInput.value.replace(/\D/g, '');
-
-    // Validate
-    if (raw.length !== 8) {
-      showCepError('Digite um CEP válido com 8 dígitos.');
-      return;
-    }
-
-    hideCepError();
-    cepBtn.textContent = 'Buscando...';
-    cepBtn.disabled = true;
+  async function fetchCep(raw) {
+    cepError.hidden = true;
 
     try {
       const response = await fetch(`https://viacep.com.br/ws/${raw}/json/`);
@@ -97,42 +91,23 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = await response.json();
 
       if (data.erro) {
-        showCepError('CEP não encontrado. Verifique e tente novamente.');
+        cepError.textContent = 'CEP não encontrado.';
+        cepError.hidden = false;
         cepResult.hidden = true;
         return;
       }
 
-      // Fill results
-      document.getElementById('res-logradouro').textContent = data.logradouro || '—';
-      document.getElementById('res-bairro').textContent = data.bairro || '—';
+      // Fill inline result
       document.getElementById('res-cidade').textContent = data.localidade || '—';
       document.getElementById('res-estado').textContent = data.uf || '—';
-
       cepResult.hidden = false;
 
     } catch (err) {
-      showCepError('Erro ao consultar o CEP. Tente novamente.');
+      cepError.textContent = 'Erro ao consultar o CEP.';
+      cepError.hidden = false;
       cepResult.hidden = true;
-    } finally {
-      cepBtn.textContent = 'Consultar';
-      cepBtn.disabled = false;
     }
   }
-
-  function showCepError(msg) {
-    cepError.textContent = msg;
-    cepError.hidden = false;
-  }
-
-  function hideCepError() {
-    cepError.hidden = true;
-  }
-
-  cepBtn.addEventListener('click', fetchCep);
-
-  cepInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') fetchCep();
-  });
 
   /* ---------- Contact Form ---------- */
   const form = document.getElementById('contact-form');
@@ -186,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Scroll Reveal ---------- */
   const revealElements = document.querySelectorAll(
-    '.feature-card, .about-content, .about-visual, .cep-card, .contact-form, .form-success'
+    '.feature-card, .about-content, .about-visual'
   );
 
   revealElements.forEach(el => el.classList.add('reveal'));
