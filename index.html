@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pulse — Fones de ouvido premium com cancelamento de ruído ativo e áudio espacial imersivo.">
+  <title>Pulse — Áudio Premium Sem Limites</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header id="header">
+    <div class="header-container">
+      <a href="#" class="logo">
+        <span class="logo-icon">◉</span> Pulse
+      </a>
+      <nav id="nav">
+        <a href="#features">Recursos</a>
+        <a href="#about">Sobre</a>
+        <a href="#cep-lookup">Endereço</a>
+        <a href="#contact">Contato</a>
+      </nav>
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section id="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <p class="hero-badge">✦ Novo Lançamento 2026</p>
+      <h1>Áudio Premium<br><span class="gradient-text">Sem Limites.</span></h1>
+      <p class="hero-description">
+        Experimente o som em sua forma mais pura. Cancelamento de ruído ativo,
+        áudio espacial 360° e bateria de 48 horas de duração.
+      </p>
+      <div class="hero-buttons">
+        <button id="cta-main" class="btn btn-primary">Saiba Mais</button>
+        <a href="#contact" class="btn btn-outline">Inscreva-se</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">48h</span>
+          <span class="stat-label">Bateria</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">360°</span>
+          <span class="stat-label">Áudio Espacial</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">-45dB</span>
+          <span class="stat-label">Canc. Ruído</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="product-ring ring-1"></div>
+      <div class="product-ring ring-2"></div>
+      <div class="product-ring ring-3"></div>
+      <div class="product-emoji">🎧</div>
+    </div>
+  </section>
+
+  <!-- ========== MODAL CTA ========== -->
+  <div id="cta-modal" class="modal-overlay" hidden>
+    <div class="modal">
+      <button id="modal-close" class="modal-close" aria-label="Fechar">&times;</button>
+      <div class="modal-icon">🎉</div>
+      <h2>Obrigado pelo interesse!</h2>
+      <p>O <strong>Pulse</strong> estará disponível em breve. Inscreva-se abaixo para ser notificado no lançamento e garantir <strong>20% de desconto</strong> exclusivo!</p>
+      <a href="#contact" id="modal-cta-link" class="btn btn-primary">Quero meu desconto</a>
+    </div>
+  </div>
+
+  <!-- ========== FEATURES ========== -->
+  <section id="features">
+    <div class="section-container">
+      <p class="section-badge">Recursos</p>
+      <h2 class="section-title">Tecnologia que você <span class="gradient-text">sente.</span></h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🔇</div>
+          <h3>Cancelamento de Ruído Ativo</h3>
+          <p>Algoritmo inteligente que se adapta ao ambiente, eliminando até 45dB de ruído externo em tempo real.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎵</div>
+          <h3>Áudio Espacial 360°</h3>
+          <p>Drivers de 40mm com rastreamento dinâmico de cabeça para uma experiência sonora totalmente imersiva.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔋</div>
+          <h3>48 Horas de Bateria</h3>
+          <p>Carregamento rápido USB-C: 10 minutos de carga = 5 horas de música. Sem interrupções.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Conexão Multipoint</h3>
+          <p>Conecte simultaneamente a dois dispositivos e alterne sem perder uma batida sequer.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💧</div>
+          <h3>Resistência IPX5</h3>
+          <p>Proteção contra suor e respingos d'água. Ideal para treinos intensos e dias chuvosos.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎤</div>
+          <h3>6 Microfones com IA</h3>
+          <p>Chamadas cristalinas em qualquer ambiente com supressão de ruído por inteligência artificial.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about">
+    <div class="section-container">
+      <div class="about-grid">
+        <div class="about-content">
+          <p class="section-badge">Sobre o Pulse</p>
+          <h2 class="section-title">Projetado para quem <span class="gradient-text">exige o melhor.</span></h2>
+          <p>
+            O Pulse nasceu da obsessão por qualidade sonora e conforto. Cada detalhe foi pensado
+            por engenheiros de áudio e designers industriais para oferecer a melhor experiência
+            auditiva do mercado.
+          </p>
+          <p>
+            Com almofadas de espuma viscoelástica, hastes de titânio e acabamento soft-touch,
+            o Pulse foi feito para longas sessões de uso sem fadiga.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight">
+              <span class="highlight-number">4.9★</span>
+              <span class="highlight-label">Avaliação média</span>
+            </div>
+            <div class="highlight">
+              <span class="highlight-number">50k+</span>
+              <span class="highlight-label">Pré-vendas</span>
+            </div>
+            <div class="highlight">
+              <span class="highlight-number">12</span>
+              <span class="highlight-label">Prêmios de design</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="about-card-stack">
+            <div class="about-card card-1">🎧 Conforto Premium</div>
+            <div class="about-card card-2">🎶 Som Hi-Res</div>
+            <div class="about-card card-3">⚡ Carga Ultra-Rápida</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CEP LOOKUP (ViaCEP API) ========== -->
+  <section id="cep-lookup">
+    <div class="section-container">
+      <p class="section-badge">Consulta de Endereço</p>
+      <h2 class="section-title">Verifique a <span class="gradient-text">entrega na sua região.</span></h2>
+      <p class="section-subtitle">Digite seu CEP para consultar disponibilidade de entrega via API ViaCEP.</p>
+
+      <div class="cep-card">
+        <div class="cep-input-group">
+          <label for="cep-input">CEP</label>
+          <div class="cep-input-row">
+            <input
+              type="text"
+              id="cep-input"
+              placeholder="Ex: 01001-000"
+              maxlength="9"
+              autocomplete="postal-code"
+            >
+            <button id="cep-btn" class="btn btn-primary">Consultar</button>
+          </div>
+          <span id="cep-error" class="field-error" hidden></span>
+        </div>
+
+        <div id="cep-result" class="cep-result" hidden>
+          <h3>📍 Endereço encontrado</h3>
+          <div class="cep-result-grid">
+            <div class="cep-field">
+              <span class="cep-label">Logradouro</span>
+              <span id="res-logradouro" class="cep-value">—</span>
+            </div>
+            <div class="cep-field">
+              <span class="cep-label">Bairro</span>
+              <span id="res-bairro" class="cep-value">—</span>
+            </div>
+            <div class="cep-field">
+              <span class="cep-label">Cidade</span>
+              <span id="res-cidade" class="cep-value">—</span>
+            </div>
+            <div class="cep-field">
+              <span class="cep-label">Estado</span>
+              <span id="res-estado" class="cep-value">—</span>
+            </div>
+          </div>
+          <div id="cep-delivery" class="cep-delivery">
+            ✅ <strong>Ótima notícia!</strong> Entregamos na sua região em até 3 dias úteis.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT FORM ========== -->
+  <section id="contact">
+    <div class="section-container">
+      <p class="section-badge">Contato</p>
+      <h2 class="section-title">Fale <span class="gradient-text">conosco.</span></h2>
+      <p class="section-subtitle">Dúvidas, sugestões ou interesse em parceria? Envie sua mensagem!</p>
+
+      <form id="contact-form" class="contact-form" novalidate>
+        <div class="form-group">
+          <label for="contact-name">Nome</label>
+          <input type="text" id="contact-name" name="name" placeholder="Seu nome completo" required>
+          <span class="field-error" id="name-error" hidden>Por favor, informe seu nome.</span>
+        </div>
+        <div class="form-group">
+          <label for="contact-email">E-mail</label>
+          <input type="email" id="contact-email" name="email" placeholder="seuemail@exemplo.com" required>
+          <span class="field-error" id="email-error" hidden>Por favor, informe um e-mail válido.</span>
+        </div>
+        <div class="form-group form-group-full">
+          <label for="contact-message">Mensagem</label>
+          <textarea id="contact-message" name="message" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
+          <span class="field-error" id="message-error" hidden>Por favor, escreva uma mensagem.</span>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Enviar Mensagem</button>
+      </form>
+
+      <div id="form-success" class="form-success" hidden>
+        <div class="success-icon">✅</div>
+        <h3>Mensagem enviada com sucesso!</h3>
+        <p>Obrigado pelo contato, <span id="success-name"></span>! Retornaremos em breve pelo e-mail informado.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <span class="logo-icon">◉</span> Pulse
+        </a>
+        <p>Áudio premium para quem não aceita menos.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navegação</h4>
+        <a href="#features">Recursos</a>
+        <a href="#about">Sobre</a>
+        <a href="#cep-lookup">Endereço</a>
+        <a href="#contact">Contato</a>
+      </div>
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <a href="#">Termos de uso</a>
+        <a href="#">Privacidade</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Pulse Audio. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
